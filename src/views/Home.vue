@@ -1,5 +1,5 @@
 <template>
-  <Form @drop.prevent="drop"/>
+  <Form @drop.prevent="drop" @change="selectedFile"/>
 
 </template>
 
@@ -17,9 +17,14 @@
 
       const drop = (e) => {
         dropzoneFile.value = e.dataTransfer.files[0]
-      }
+      };
+      
+      const selectedFile = () =>{
+        dropzoneFile.value = document.querySelector('.dropzoneFile').files[0]
+      };
 
-      return { dropzoneFile, drop }
+      return { dropzoneFile, drop, selectedFile };
+
     }
   }  
 </script>
