@@ -4,7 +4,7 @@
 ## Pré-requisitos
 
 <li>
-<h3>NODE JS + EDITOR DE CÓDIGO FONTE.</h3:
+  NODE JS + EDITOR DE CÓDIGO FONTE.
 </li>
 
 
