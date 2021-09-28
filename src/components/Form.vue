@@ -250,7 +250,7 @@ export default{
 .sucoGrande {
   max-width: 20%;
   margin-top: 1%;
-  margin-left: -5%;
+  margin-left: -10%;
   position: absolute;
   border: none;
 }
