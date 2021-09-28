@@ -8,7 +8,7 @@ Projeto desenvolvido com API JSON Server.
 
 <li> 1º Faça o download do código ou um git clone do projeto nesse link --> <a href="https://github.com/brnoliveira110/pastel_de_ideias.git">https://github.com/brnoliveira110/pastel_de_ideias.git</a></li>
 
-<li>Após abrir a pasta do projeto com seu editor de código:</li>
+<h3>Após abrir a pasta do projeto com seu editor de código:</h3>
 
 <li>No terminal do seu editor de código  Instale as dependências.</li>
 
