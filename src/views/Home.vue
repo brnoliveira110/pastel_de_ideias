@@ -1,18 +1,30 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Form @drop.prevent="drop"/>
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import Form from "../components/Form.vue";
+  import { ref } from "vue";
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  export default{
+    name: "Home",
+    components:{
+      Form
+    },
+    setup(){
+      let dropzoneFile = ref("");
+
+      const drop = (e) => {
+        dropzoneFile.value = e.dataTransfer.files[0]
+      }
+
+      return { dropzoneFile, drop }
+    }
+  }  
 </script>
+
+
+
+
+
