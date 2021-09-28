@@ -5,7 +5,7 @@
 <!--           Imagens de tamanho grande que alternam entre pastel e suco.
  -->
             <img v-if="bebida != true" src="img/pastel/pastel-paralax.png" class="pastelGrande" alt="Imagem de um pastel grande">
-            <img v-if="bebida == true" src="img/suco/suco-de-goiaba.png" class="sucoGrande" alt="Imagem de um copo de suco grande">
+
 <!--             Logo principal
  -->            <img  src="img/principal/Logo.svg" class="logo" alt="Imagem do logo escrito Pastel de Ideias">
  <!--           Imagens de tamanho pequeno que alternam entre pastel e suco.
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                     <!-- Botão de reset e submit -->
-                    <button class="limpar"  type="reset">LIMPAR</button>
-                    <button type="submit" class="cadastrar">CADASTRAR</button>
+                    <input class="limpar"  type="reset" value="LIMPAR">
+                    <input type="submit" class="cadastrar" value="CADASTRAR">
                 </div>
                 <!-- Mensagem que aparece após envio do formulário
  -->
@@ -240,25 +240,12 @@ export default{
   padding-top: 60px;
 }
 .pastelGrande {
-  max-width: 31%;
-  margin-top: -5%;
-  margin-left: -15%;
+  max-width: 300px;
+  margin-left: -15px;
   position: absolute;
   border: none;
 }
 .pastelGrande:hover {
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
-}
-.sucoGrande {
-  max-width: 20%;
-  margin-top: 1%;
-  margin-left: -10%;
-  position: absolute;
-  border: none;
-}
-.sucoGrande:hover {
   -webkit-transform: scale(1.3);
   -ms-transform: scale(1.3);
   transform: scale(1.3);
