@@ -169,6 +169,7 @@ export default{
         this.preco = "",
         this.descricao = "",
         this.bebida = ""
+        this.dropzoneFile = ""
 
 
         this.getCardapios();
