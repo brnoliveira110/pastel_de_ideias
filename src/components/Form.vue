@@ -43,18 +43,19 @@
  -->                    <div>
                         <input class="descricao" id="descricao" name="descricao" v-model="descricao"  type="text" placeholder="Descrição">
 <!--                         Dropzone para upload de imagem
- -->                   <div class="upload" id="upload" name="upload" @dragenter.prevent="toggleActive" 
+ -->                   <div class="upload" @dragenter.prevent="toggleActive" 
                         @dragleave.prevent="toggleActive"
                         @dragover.prevent
                         @drop.prevent="drop"
-                        @change="selectedFile"
                         :class="{ 'active-dropzone': active}">
-                          <input class="dropzoneFile" type="file"  id="dropzoneFile" />                          
+                          <input class="inputFile" type="file"  id="dropzoneFile" />                          
 
-                          <label for="dropzoneFile"><img class="imgUpload" for="dropzoneFile" src="img/principal/upload_image.png" alt="Imagem de upload"></label>
+                          <label for="dropzoneFile"><img class="imgUpload" src="img/principal/upload_image.png" alt="Imagem de upload"></label>
                           <span for="dropzoneFile">Jogue aqui o arquivo de imagem do seu pastel ou clique para localizar a pasta.</span>
                       <!-- Nome do arquivo carregado.-->
-                          <p class="uploadR">File: {{ dropzoneFile.name }}</p>
+                          <div  v-if="dropzoneFile" class="uploadR">
+                          <p class="file-info">File: {{ dropzoneFile.name }}</p>
+                          </div>
                         </div>
                     </div>
                     <!-- Botão de reset e submit -->
@@ -103,14 +104,8 @@ export default{
         let dropzoneFile = ref("");
         const drop = (e) => {
           dropzoneFile.value = e.dataTransfer.files[0]
-        };
-
-        const selectedFile = () =>{
-        dropzoneFile.value = document.querySelector('.dropzoneFile').files[0]
-        };
-
-
-        return { dropzoneFile, drop, active, toggleActive, selectedFile }
+        }
+        return { dropzoneFile, drop, active, toggleActive }
     },
 
     
@@ -166,20 +161,15 @@ export default{
         this.msg = "Cardápio cadastrado com sucesso!"
 
         // clear message
-        setTimeout(() => this.msg = "", 2000)
+        setTimeout(() => this.msg = "", 3000)
       
         // limpar campos
         this.tituloPedido = "",
         this.sabor = "",
         this.preco = "",
         this.descricao = "",
-<<<<<<< Updated upstream
         this.bebida = ""
         this.dropzoneFile = ""
-=======
-        this.bebida = "",
-        this.dropzoneFile = "",
->>>>>>> Stashed changes
 
 
         this.getCardapios();
@@ -389,7 +379,7 @@ export default{
 
 .upload {
   width: 99%;
-  max-height: 100px;
+  height: 70px;
   margin-top: 15px;
   border: 1px solid #e43636;
   font: normal normal normal 10px Roboto;
@@ -432,7 +422,6 @@ export default{
     width: 30%;
     height: 45px;
     border: #E43636 solid 2px;
-    margin-bottom: 10px;
   }
 
 .limpar {
