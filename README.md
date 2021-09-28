@@ -10,16 +10,16 @@ Projeto desenvolvido com API JSON Server.
 
 <li>Após abrir a pasta do projeto com seu editor de código:</li>
 
-<li>No terminal do seu editor de código  Instale as dependências</li>
+<li>No terminal do seu editor de código  Instale as dependências.</li>
 
 <li>1º npm install</li>
 <li>2º npm install vue</li>
 <li>3º npm install json-serve</li>
 
-<li>Para colocar o projeto em produção no seu terminal digite: npm run serve</li>
-<li>Abra uma nova aba no terminal do seu editor de código e coloque a API para rodar com o comando: npm run backend</li>
+<li>Para colocar o projeto em produção no seu terminal digite: npm run serve.</li>
+<li>Abra uma nova aba no terminal do seu editor de código e coloque a API para rodar com o comando: npm run backend.</li>
 
-<li>No primeiro terminal use ctrl + clique no link http://localhost:8080/</li>
+<li>No primeiro terminal use ctrl + clique no link http://localhost:8080/.</li>
 
 
 # Construído com
