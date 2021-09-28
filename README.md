@@ -1,7 +1,11 @@
 # PASTEL DE IDEIAS
 
 
-Projeto desenvolvido com API JSON Server.
+## Pré-requisitos
+
+<li>
+<h3>NODE JS + EDITOR DE CÓDIGO FONTE.</h3:
+</li>
 
 
 ## Primeiros passos
