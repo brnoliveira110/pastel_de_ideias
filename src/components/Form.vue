@@ -2,18 +2,21 @@
     <div class="container">
       
         <div class="wave">
+          <div class="imgPrincipal">
 <!--           Imagens de tamanho grande que alternam entre pastel e suco.
  -->
             <img v-if="bebida != true" src="img/pastel/pastel-paralax.png" class="pastelGrande" alt="Imagem de um pastel grande">
+            <img v-if="bebida == true" src="img/suco/suco-de-goiaba.png" class="sucoGrande " alt="Imagem de um copo de suco a direita da tela.">
+
 
 <!--             Logo principal
  -->            <img  src="img/principal/Logo.svg" class="logo" alt="Imagem do logo escrito Pastel de Ideias">
  <!--           Imagens de tamanho pequeno que alternam entre pastel e suco.
  -->
             <img v-if="bebida != true" src="img/pastel/pasteis-img.png" class="pastelDir" alt="Imagem de dois pasteis a direita da tela.">
-            <img v-if="bebida != true" src="img/pastel/pasteis-img.png" class="pastelEsq" alt="Imagem de dois pasteis a esquerda da tela.">
-            <img v-if="bebida == true" src="img/suco/suco-de-goiaba.png" class="sucoEsq " alt="Imagem de um copo de suco a direita da tela.">
             <img v-if="bebida == true" src="img/suco/suco-de-goiaba.png" class="sucoDir" alt="Imagem de um copo de suco a esquerda da tela.">
+
+            </div>
 
 <!--             Formulário para envio dos dados do cardápio.
  -->
@@ -30,13 +33,14 @@
                     <label for="foo"></label>
                     <span class="bebida">Bebida</span>
 <!--                     Dados obrigatórios
- -->
-                    <label for="tituloPedido"></label>
-                    <input class="tPedido" id="tPedido" name="tituloDoPedido" v-model="tituloPedido"  type="text" placeholder="Título do pedido" required>
-                    <label for="sabor"></label>
-                    <input class="sabor" id="sabor" name="saborProduto" v-model="sabor" type="text" placeholder="Sabor" required>
-                    <label for="preco"></label>
-                    <input class="preco " id="preco" name="precoCardapio" v-model="preco" type="numper" pattern="[0-9]+([,\.][0-9]+)?" min="1" step="any" placeholder="R$" required>
+ -->                <div class="dObrigatorios">
+                      <label for="tituloPedido"></label>
+                      <input class="tPedido" id="tPedido" name="tituloDoPedido" v-model="tituloPedido"  type="text" placeholder="Título do pedido" required>
+                      <label for="sabor"></label>
+                      <input class="sabor" id="sabor" name="saborProduto" v-model="sabor" type="text" placeholder="Sabor" required>
+                      <label for="preco"></label>
+                      <input class="preco " id="preco" name="precoCardapio" v-model="preco" type="numper" pattern="[0-9]+([,\.][0-9]+)?" min="1" step="any" placeholder="R$" required>
+                    </div>
                 </div>
                 <div class="Bpedido">
 <!--                   Dados opcionais
@@ -58,15 +62,18 @@
                         </div>
                     </div>
                     <!-- Botão de reset e submit -->
+                    <div class="buttons">
                     <input class="limpar"  type="reset" value="LIMPAR">
                     <input type="submit" class="cadastrar" value="CADASTRAR">
+                    </div>
                 </div>
                 <!-- Mensagem que aparece após envio do formulário
  -->
                  <Message :msg="msg" v-show="msg" />
              </form>
-<!--                   Cardápios cadastrados.
- -->          <div class="cardapio1" v-for="cardapio in cardapios" :key="cardapio.id">
+
+        </div>
+            <div class="cardapio1" v-for="cardapio in cardapios" :key="cardapio.id">
                 <hr>
                 <p><img v-if="cardapio.bebida != true" src="img/pastel/pastelmodal-img.png" class="produtolModal">
                     <img v-if="cardapio.bebida == true" src="img/suco/suco-img.png" class="produtolModal"></p>
@@ -79,7 +86,6 @@
                 <p class="descricaoProduto"><span class="tDescri">Descrição: </span><span class="descriProduto">{{ cardapio.descricao }}</span></p>
                 <button class="limpar" @click="deleteCardapio(cardapio.id)">EXCLUIR CARDÁPIO</button>
             </div>
-        </div>
     </div>
 </template>
 
@@ -213,78 +219,116 @@ export default{
 
 .container {
   background-image: linear-gradient(to top, transparent 5%, #fff 50%),
-    url('/img/principal/pattern.png');
-  max-width: 1110px;
-  margin: 0 auto;
-  height: 100vh;
+  url('/img/principal/pattern.png');
+  height: 90vh;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  width: 80vw;
+  z-index: 0;
 }
 
 .wave {
-  width: 100%;
+  width: 80vw;
   margin: 0 auto;
   flex-wrap: wrap;
   background-image: url('/img/principal/wave.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100vh;
+  height: 75vh;
   opacity: 1;
+}
+
+.imgPrincipal{
+  width: 80vw;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+
+
+  
 }
 /* Logo Princial
  */
 .logo {
-  margin: 0 auto;
-  margin-bottom: 20px;
-  max-width: 35%;
-  padding-top: 60px;
-}
-.pastelGrande {
-  max-width: 250px;
-  margin-left: -15px;
+  width: 35vw;
   position: absolute;
-  border: none;
+  margin-inline-start: 25%;
+  margin-top: 3%;
+}
+form{
+  width: 85vw;
+  margin: 15% auto;
+  position: absolute;
+
+}
+
+.pastelGrande {
+  position: absolute;
+  max-width: 35%;
+  border: 0px solid black;
+  z-index: 0;
 }
 .pastelGrande:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .pastelDir {
-  margin-top: 8%;
-  max-width: 15%;
-  float: right;
+  margin-top: 11%;
+  width: 15vw;
+  margin-left: 68%;
+  position: absolute;
+  z-index: 0;
 }
 
-.pastelEsq {
-  margin-top: 8%;
-  max-width: 15%;
-  float: left;
-}
+
+
 
 /* Suco */
 .sucoDir {
-  margin-top: 5%;
-  max-width: 15%;
-  float: left;
+  margin-top: 6%;
+  width: 15vw;
+  margin-left: 68%;
+  position: absolute;
+  z-index: 0;
 }
-.sucoEsq {
-  margin-top: 5%;
-  max-width: 15%;
-  float: right;
+.sucoGrande {
+  margin-top: 6%;
+  position: absolute;
+  max-width: 20%;
+  border: 0px solid black;
+  z-index: 0;
+}
+
+.sucoGrande:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
 .topPedido {
   display: flex;
   flex-wrap: wrap;
   background-color: #ffca00;
-  padding: 10px;
+  padding: 17px;
   border-radius: 15px 15px 0 0;
   margin: auto;
-  width: 60%;
+  width: 50vw;
   background: #ffca00 0% 0% no-repeat padding-box;
 }
+
+.dObrigatorios{
+  flex-wrap: wrap;
+  position: absolute;
+  margin-top: 17px;
+  display: flex;
+  width: 50vw;
+
+}
+
 .title {
+  margin-inline-end: auto;
   text-align: center;
   font: italic normal bold 14px Roboto;
   letter-spacing: 0px;
@@ -293,7 +337,7 @@ export default{
 }
 
 .tPedido {
-  width: 42%;
+  width: 40%;
   margin-right: 10px;
   margin-top: 2px;
   border: 1px solid #e43636;
@@ -305,7 +349,7 @@ export default{
 }
 
 .sabor {
-  width: 41%;
+  width: 40%;
   margin-right: 10px;
   margin-top: 2px;
   border: 1px solid #e43636;
@@ -317,7 +361,7 @@ export default{
 }
 
 .preco {
-  width: 13%;
+  width: 12%;
   margin-top: 2px;
   border: 1px solid #e43636;
   font: normal normal normal 10px Roboto;
@@ -337,7 +381,6 @@ export default{
 }
 
 .comida {
-  margin-left: 31%;
   font: normal normal normal 12px Roboto;
   color: #a03400;
   opacity: 1;
@@ -349,17 +392,17 @@ export default{
 }
 
 .Bpedido {
-  padding: 10px;
+  padding: 15px 15px 30px;
   border-radius: 0 0 15px 15px;
   margin: 0 auto;
-  width: 60%;
+  width: 50vw;
   background-color: white;
   box-shadow: 0px 0px 30px #740b0b45;
 }
 
 .descricao {
   width: 99%;
-  height: 50px;
+  height: 10vh;
   margin-top: 10px;
   border: 1px solid #e43636;
   font: normal normal normal 10px Roboto;
@@ -370,7 +413,7 @@ export default{
 
 .upload {
   width: 99%;
-  max-height: 100px;
+  height: 15vh;
   margin-top: 15px;
   border: 1px solid #e43636;
   font: normal normal normal 10px Roboto;
@@ -381,10 +424,18 @@ export default{
   align-items: center;
   padding: 15px;
   transition: all 0.3s ease;
+  background-color: #fff;
+
 }
 
 .inputFile {
   visibility: hidden;
+  display: none;
+}
+
+.dropzoneFile{
+    visibility: hidden;
+
 }
 
 .imgUpload{
@@ -411,6 +462,13 @@ export default{
     padding: 0 5px 0 5px;
     border-radius: 5px;
     border: #E43636 solid 2px;
+}
+
+.buttons{
+  position: absolute;
+  width: 40vw;
+  margin: 0 auto;
+  margin-left: 4vw;
 }
 
 .limpar {
@@ -501,11 +559,15 @@ input:focus {
   display: none;
 }
 
-/* Modal */
+/*----------------------------------------- Modal -----------------------------------------------------------------*/
 
 .cardapio1 {
-/*   display: none;
- */}
+  width: 85vw;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  background-size: contain;
+  opacity: 1;
+}
 
 .content {
   /* display: none; */
@@ -525,9 +587,7 @@ input:focus {
   margin-left: 13%;
 }
 
-.cardapio2 {
-/*   display: none;
- */}
+
 
 hr {
   border-color: #e43636;
