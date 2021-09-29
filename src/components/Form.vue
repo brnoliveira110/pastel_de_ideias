@@ -235,7 +235,7 @@ export default{
   background-image: url('/img/principal/wave.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  height: 75vh;
+  height: 70vh;
   opacity: 1;
 }
 
