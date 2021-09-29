@@ -21,7 +21,7 @@
 <li>3º npm install json-serve</li>
 
 <li>Para colocar o projeto em produção no seu terminal digite: npm run serve.</li>
-<li>Abra uma nova aba no terminal do seu editor de código, verifique se o terminal está aberto na pasta raiz do projeto e coloque a API para rodar com o comando: npm run backend.</li>
+<li>Abra uma nova aba no terminal do seu editor de código, certifique-se que o terminal está aberto na pasta raiz do projeto e então coloque a API para rodar com o comando: npm run backend.</li>
 
 <li>No primeiro terminal use ctrl + clique no link http://localhost:8080/.</li>
 
