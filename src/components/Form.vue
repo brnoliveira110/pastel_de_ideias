@@ -240,15 +240,15 @@ export default{
   padding-top: 60px;
 }
 .pastelGrande {
-  max-width: 300px;
+  max-width: 250px;
   margin-left: -15px;
   position: absolute;
   border: none;
 }
 .pastelGrande:hover {
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .pastelDir {
