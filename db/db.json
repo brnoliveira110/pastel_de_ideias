@@ -1,28 +1,3 @@
 {
-  "cardapios": [
-    {
-      "tituloPedido": "sdfdfds",
-      "sabor": "dsfdsf",
-      "preco": 4.98,
-      "descricao": "dfgdfgfdg",
-      "bebida": null,
-      "id": 1
-    },
-    {
-      "tituloPedido": "gdfgdfgdfgdfg",
-      "sabor": "gdfgdfg",
-      "preco": 2313,
-      "descricao": "dfgdfgdfg",
-      "bebida": true,
-      "id": 2
-    },
-    {
-      "tituloPedido": "dgfdfgfdg",
-      "sabor": "dfgdfg",
-      "preco": 49.20231321,
-      "descricao": "dfgdfgdfg",
-      "bebida": "",
-      "id": 3
-    }
-  ]
+  "cardapios": []
 }
