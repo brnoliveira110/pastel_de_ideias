@@ -36,7 +36,7 @@
                     <label for="sabor"></label>
                     <input class="sabor" id="sabor" name="saborProduto" v-model="sabor" type="text" placeholder="Sabor" required>
                     <label for="preco"></label>
-                    <input class="preco " id="preco" name="precoCardapio" v-model="preco" type="number" min="1" step="any" placeholder="R$" required>
+                    <input class="preco " id="preco" name="precoCardapio" v-model="preco" type="numper" pattern="[0-9]+([,\.][0-9]+)?" min="1" step="any" placeholder="R$" required>
                 </div>
                 <div class="Bpedido">
 <!--                   Dados opcionais
@@ -77,7 +77,7 @@
                 <p class="descricsabor"><span class="tSabor">Sabor: </span>
                 <span class="produto"> {{ cardapio.sabor }} </span></p>
                 <p class="descricaoProduto"><span class="tDescri">Descrição: </span><span class="descriProduto">{{ cardapio.descricao }}</span></p>
-                <button class="limpar" @click="deleteCardapio(cardapio.id)">EXCLUIR CARDAPIO</button>
+                <button class="limpar" @click="deleteCardapio(cardapio.id)">EXCLUIR CARDÁPIO</button>
             </div>
         </div>
     </div>
